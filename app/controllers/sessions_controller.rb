@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+
+class SessionsController < ApplicationController
+  def login
+    @user = User.find_by(email: params[:email])
+    if @user&.authenticate(params[:password])
+      token = JsonWebToken.encode(user_id: @user.id)
+      time = Time.zone.now + 24.hours.to_i
+      render json: {
+        token:,
+        exp: time.strftime('%Y-%m-%d %H:%M'),
+        user: @user
+      }, status: :ok
+    else
+      render json: { error: 'UnAuthorized' }, status: :unauthorized
+    end
+  end
+end
