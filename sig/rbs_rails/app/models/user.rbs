@@ -38,9 +38,9 @@ class User < ::ApplicationRecord
 
     def clear_id_change: () -> void
 
-    def name: () -> String?
+    def name: () -> String
 
-    def name=: (String?) -> String?
+    def name=: (String) -> String
 
     def name?: () -> bool
 
@@ -74,9 +74,9 @@ class User < ::ApplicationRecord
 
     def clear_name_change: () -> void
 
-    def email: () -> String?
+    def email: () -> String
 
-    def email=: (String?) -> String?
+    def email=: (String) -> String
 
     def email?: () -> bool
 
@@ -110,77 +110,41 @@ class User < ::ApplicationRecord
 
     def clear_email_change: () -> void
 
-    def password: () -> String?
+    def password_digest: () -> String
 
-    def password=: (String?) -> String?
+    def password_digest=: (String) -> String
 
-    def password?: () -> bool
+    def password_digest?: () -> bool
 
-    def password_changed?: () -> bool
+    def password_digest_changed?: () -> bool
 
-    def password_change: () -> [ String?, String? ]
+    def password_digest_change: () -> [ String?, String? ]
 
-    def password_will_change!: () -> void
+    def password_digest_will_change!: () -> void
 
-    def password_was: () -> String?
+    def password_digest_was: () -> String?
 
-    def password_previously_changed?: () -> bool
+    def password_digest_previously_changed?: () -> bool
 
-    def password_previous_change: () -> Array[String?]?
+    def password_digest_previous_change: () -> Array[String?]?
 
-    def password_previously_was: () -> String?
+    def password_digest_previously_was: () -> String?
 
-    def password_before_last_save: () -> String?
+    def password_digest_before_last_save: () -> String?
 
-    def password_change_to_be_saved: () -> Array[String?]?
+    def password_digest_change_to_be_saved: () -> Array[String?]?
 
-    def password_in_database: () -> String?
+    def password_digest_in_database: () -> String?
 
-    def saved_change_to_password: () -> Array[String?]?
+    def saved_change_to_password_digest: () -> Array[String?]?
 
-    def saved_change_to_password?: () -> bool
+    def saved_change_to_password_digest?: () -> bool
 
-    def will_save_change_to_password?: () -> bool
+    def will_save_change_to_password_digest?: () -> bool
 
-    def restore_password!: () -> void
+    def restore_password_digest!: () -> void
 
-    def clear_password_change: () -> void
-
-    def login_session: () -> String?
-
-    def login_session=: (String?) -> String?
-
-    def login_session?: () -> bool
-
-    def login_session_changed?: () -> bool
-
-    def login_session_change: () -> [ String?, String? ]
-
-    def login_session_will_change!: () -> void
-
-    def login_session_was: () -> String?
-
-    def login_session_previously_changed?: () -> bool
-
-    def login_session_previous_change: () -> Array[String?]?
-
-    def login_session_previously_was: () -> String?
-
-    def login_session_before_last_save: () -> String?
-
-    def login_session_change_to_be_saved: () -> Array[String?]?
-
-    def login_session_in_database: () -> String?
-
-    def saved_change_to_login_session: () -> Array[String?]?
-
-    def saved_change_to_login_session?: () -> bool
-
-    def will_save_change_to_login_session?: () -> bool
-
-    def restore_login_session!: () -> void
-
-    def clear_login_session_change: () -> void
+    def clear_password_digest_change: () -> void
 
     def created_at: () -> ActiveSupport::TimeWithZone
 
@@ -255,10 +219,34 @@ class User < ::ApplicationRecord
     def clear_updated_at_change: () -> void
   end
   include GeneratedAttributeMethods
+  def organizing_events: () -> Event::ActiveRecord_Associations_CollectionProxy
+  def organizing_events=: (Event::ActiveRecord_Associations_CollectionProxy | Array[Event]) -> (Event::ActiveRecord_Associations_CollectionProxy | Array[Event])
+  def organizing_event_ids: () -> Array[Integer]
+  def organizing_event_ids=: (Array[Integer]) -> Array[Integer]
+  def participations: () -> Participation::ActiveRecord_Associations_CollectionProxy
+  def participations=: (Participation::ActiveRecord_Associations_CollectionProxy | Array[Participation]) -> (Participation::ActiveRecord_Associations_CollectionProxy | Array[Participation])
+  def participation_ids: () -> Array[Integer]
+  def participation_ids=: (Array[Integer]) -> Array[Integer]
+  def events: () -> Event::ActiveRecord_Associations_CollectionProxy
+  def events=: (Event::ActiveRecord_Associations_CollectionProxy | Array[Event]) -> (Event::ActiveRecord_Associations_CollectionProxy | Array[Event])
+  def event_ids: () -> Array[Integer]
+  def event_ids=: (Array[Integer]) -> Array[Integer]
 
   module GeneratedAssociationMethods
   end
   include GeneratedAssociationMethods
+  module ActiveModel_SecurePassword_InstanceMethodsOnActivation_password
+    attr_reader password: String?
+
+    def password=: (String) -> String
+
+    def password_confirmation=: (String) -> String
+
+    def authenticate_password: (String) -> (User | false)
+
+    alias authenticate authenticate_password
+  end
+  include ActiveModel_SecurePassword_InstanceMethodsOnActivation_password
 
   module GeneratedRelationMethods
   end
