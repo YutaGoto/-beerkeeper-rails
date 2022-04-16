@@ -5,7 +5,7 @@ orbs:
   slack: circleci/slack@4.4.2
 
 jobs:
-  build:
+  test:
     docker:
       - image: cimg/ruby:3.1.1
     executor: ruby/default
@@ -17,6 +17,9 @@ jobs:
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
       - ruby/install-deps
       - ruby/rubocop-check
+      - run:
+          name: minitest
+          command: bundle e rails test
       - slack/notify:
           event: fail
           template: basic_fail_1
@@ -27,6 +30,6 @@ jobs:
 workflows:
   main:
     jobs:
-      - build:
+      - test:
           context:
             - slack
