@@ -17,6 +17,6 @@ class User < ApplicationRecord
            else
              BCrypt::Engine.cost
            end
-    BCrypt::Password.create(string, cost: cost)
+    BCrypt::Password.create(string, cost:)
   end
 end

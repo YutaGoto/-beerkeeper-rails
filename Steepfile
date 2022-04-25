@@ -6,12 +6,12 @@ target :lib do
   signature 'sig'
 
   # check 'app' # Directory name
-  check "app/models"
+  check 'app/models'
   #   check "Gemfile"                   # File name
   #   check "app/models/**/*.rb"        # Glob
   #   # ignore "lib/templates/*.rb"
   #
-  library "uri"       # Standard libraries
+  library 'uri' # Standard libraries
 
   configure_code_diagnostics do |config|
     config[D::Ruby::MethodDefinitionMissing] = :hint
