@@ -18,6 +18,9 @@ jobs:
       - ruby/install-deps
       - ruby/rubocop-check
       - run:
+          name: steep check
+          command: bundle e steep check
+      - run:
           name: minitest
           command: bundle e rails test
       - slack/notify:
