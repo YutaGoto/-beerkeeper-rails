@@ -4,14 +4,7 @@ D = Steep::Diagnostic
 
 target :lib do
   signature 'sig'
-
-  # check 'app' # Directory name
   check 'app/models'
-  #   check "Gemfile"                   # File name
-  #   check "app/models/**/*.rb"        # Glob
-  #   # ignore "lib/templates/*.rb"
-  #
-  library 'uri' # Standard libraries
 
   configure_code_diagnostics do |config|
     config[D::Ruby::MethodDefinitionMissing] = :hint
@@ -19,8 +12,7 @@ target :lib do
     config[D::Ruby::FallbackAny] = :hint
   end
 
-  # repo_path "gem_rbs/gems"
-
+  library 'uri'
   library 'pathname'
   library 'logger'
   library 'mutex_m'

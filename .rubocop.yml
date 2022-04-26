@@ -17,6 +17,9 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
 Metrics/MethodLength:
   Max: 20
   Exclude:
