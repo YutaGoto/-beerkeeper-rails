@@ -19,7 +19,7 @@ jobs:
       - ruby/rubocop-check
       - run:
           name: rbs collection
-          command: rbs collection install
+          command: bundle e rbs collection install
       - run:
           name: steep check
           command: bundle e steep check
