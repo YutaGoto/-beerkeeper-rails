@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :participations, dependent: :destroy
   has_many :events, through: :participations
 
+  # @type const URI::MailTo::EMAIL_REGEXP: Regexp
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, length: { minimum: 8 }
 
@@ -17,6 +18,6 @@ class User < ApplicationRecord
            else
              BCrypt::Engine.cost
            end
-    BCrypt::Password.create(string, cost:)
+    BCrypt::Password.create(string, cost: cost)
   end
 end
