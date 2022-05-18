@@ -1,24 +1,13 @@
-# README
+# Beerkeeper Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![CircleCI](https://circleci.com/gh/YutaGoto/beerkeeper-rails/tree/main.svg?style=svg)](https://circleci.com/gh/YutaGoto/beerkeeper-rails/tree/main)
 
-Things you may want to cover:
+## dev
 
-* Ruby version
+```sh
+bundle e rails s
+```
 
-* System dependencies
+## Front
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<https://github.com/YutaGoto/beerkeeper-next>
