@@ -11,3 +11,5 @@ bundle e rails s
 ## Front
 
 <https://github.com/YutaGoto/beerkeeper-next>
+
+inspired by: <https://github.com/mitakarb/beerkeeper>
