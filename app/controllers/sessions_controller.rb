@@ -21,11 +21,7 @@ class SessionsController < ApplicationController
     if @user.save
       token = JsonWebToken.encode(user_id: @user.id)
       time = Time.zone.now + 24.hours.to_i
-      render json: {
-        token:,
-        exp: time.strftime('%Y-%m-%d %H:%M'),
-        user: @user
-      }, status: :ok
+      render status: :ok
     else
       render json: { error: 'UnAuthorized' }, status: :unauthorized
     end

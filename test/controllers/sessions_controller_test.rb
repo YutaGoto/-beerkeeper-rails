@@ -36,9 +36,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       name: 'name'
     }
 
-    json_response = JSON.parse(@response.body)
     assert_response :success
-    assert json_response['token'].present?
   end
 
   test 'should not signup with same email' do
