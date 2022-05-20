@@ -19,8 +19,6 @@ class SessionsController < ApplicationController
   def signup
     @user = User.new(user_params)
     if @user.save
-      token = JsonWebToken.encode(user_id: @user.id)
-      time = Time.zone.now + 24.hours.to_i
       render status: :ok
     else
       render json: { error: 'UnAuthorized' }, status: :unauthorized
