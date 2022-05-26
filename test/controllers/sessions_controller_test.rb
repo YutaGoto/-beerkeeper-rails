@@ -25,7 +25,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       password: 'wrong_password'
     }
 
-    assert_response :unauthorized
+    assert_response :unprocessable_entity
   end
 
   test 'should signup' do
@@ -47,7 +47,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       name: 'name'
     }
 
-    assert_response :unauthorized
+    assert_response :unprocessable_entity
   end
 
   test 'should not signup with not match password' do
@@ -58,6 +58,6 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       password_confirmation: 'wrong_password'
     }
 
-    assert_response :unauthorized
+    assert_response :unprocessable_entity
   end
 end
