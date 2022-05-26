@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post '/users/login', to: 'sessions#login'
+  post '/users/signup', to: 'sessions#signup'
   resources :events, only: %i[index show create update]
   resources :participations, only: %i[create destroy]
 
