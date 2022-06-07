@@ -86,7 +86,7 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
-    jwt (2.3.0)
+    jwt (2.4.0)
     language_server-protocol (3.16.0.3)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
