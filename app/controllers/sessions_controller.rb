@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         user: @user
       }, status: :ok
     else
-      render json: { error: 'UnAuthorized' }, status: :unauthorized
+      render json: { error: 'unprocessable_entity' }, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     if @user.save
       render status: :ok
     else
-      render json: { error: 'UnAuthorized' }, status: :unauthorized
+      render json: { error: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
