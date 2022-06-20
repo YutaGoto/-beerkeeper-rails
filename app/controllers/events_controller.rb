@@ -5,19 +5,19 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    render json: @events, status: :ok
+    render json: EventResource.new(@events).serialize, status: :ok
   end
 
   def show
     @event = Event.includes(:participations, :organizer).find(params[:id])
-    render json: { event: @event.as_json(include: %i[participations organizer]) }, status: :ok
+    render json: EventResource.new(@event), status: :ok
   end
 
   def create
     @event = Event.new(event_params)
     @event.organizer = @current_user
     if @event.save
-      render json: { event: @event }, status: :created
+      render json: EventResource.new(@event), status: :created
     else
       render json: { errors: @event.errors.full_messages },
              status: :unprocessable_entity
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
-    render json: { event: @event }, status: :ok
+    render json: EventResource.new(@event), status: :ok
   end
 
   private
