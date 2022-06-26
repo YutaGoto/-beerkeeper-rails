@@ -5,7 +5,7 @@ class UserResource
 
   root_key :user, :users
 
-  attributes :name, :email
+  attributes :id, :name, :email
 
   many :organizing_events, resource: EventResource
   many :events, resource: EventResource
