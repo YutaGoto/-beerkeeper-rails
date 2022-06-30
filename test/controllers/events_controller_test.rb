@@ -25,28 +25,32 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create an event' do
     post events_url, params: {
-      name: 'Test Event',
-      organizer: @user.id,
-      start_at: Time.zone.now,
-      end_at: 1.hour.from_now,
-      description: 'This is a test event.',
-      budget: '$100',
-      max_size: 10,
-      location: '123 Main St.'
+      event: {
+        name: 'Test Event',
+        organizer: @user.id,
+        start_at: Time.zone.now,
+        end_at: 1.hour.from_now,
+        description: 'This is a test event.',
+        budget: '$100',
+        max_size: 10,
+        location: '123 Main St.'
+      }
     }, headers: @authorization
     assert_response :success
   end
 
   test 'should not create an event with invalid value' do
     post events_url, params: {
-      name: '',
-      organizer: @user.id,
-      start_at: Time.zone.now,
-      end_at: 1.hour.from_now,
-      description: 'This is a test event.',
-      budget: '$100',
-      max_size: 10,
-      location: '123 Main St.'
+      event: {
+        name: '',
+        organizer: @user.id,
+        start_at: Time.zone.now,
+        end_at: 1.hour.from_now,
+        description: 'This is a test event.',
+        budget: '$100',
+        max_size: 10,
+        location: '123 Main St.'
+      }
     }, headers: @authorization
     assert_response :unprocessable_entity
   end
