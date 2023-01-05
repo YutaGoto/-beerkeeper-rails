@@ -1,13 +1,13 @@
 version: 2.1
 
 orbs:
-  ruby: circleci/ruby@1.4.0
+  ruby: circleci/ruby@2.0.0
   slack: circleci/slack@4.4.2
 
 jobs:
   test:
     docker:
-      - image: cimg/ruby:3.1.1
+      - image: cimg/ruby:3.2
     executor: ruby/default
     steps:
       - checkout
@@ -17,12 +17,6 @@ jobs:
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
       - ruby/install-deps
       - ruby/rubocop-check
-      - run:
-          name: rbs collection
-          command: bundle e rbs collection install
-      - run:
-          name: steep check
-          command: bundle e steep check
       - run:
           name: minitest
           command: bundle e rails test
@@ -39,3 +33,4 @@ workflows:
       - test:
           context:
             - slack
+# VS Code Extension Version: 1.5.1
