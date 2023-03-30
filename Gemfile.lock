@@ -124,7 +124,7 @@ GEM
     parallel (1.22.1)
     parser (3.2.1.1)
       ast (~> 2.4.1)
-    puma (6.1.0)
+    puma (6.2.0)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
@@ -227,7 +227,7 @@ DEPENDENCIES
   bootsnap
   debug
   jwt
-  puma (~> 6.1)
+  puma (~> 6.2)
   rack-cors
   rails (~> 7.0.4)
   rbs
