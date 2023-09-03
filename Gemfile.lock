@@ -194,7 +194,7 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
     securerandom (0.2.2)
-    sqlite3 (1.6.3-x86_64-linux)
+    sqlite3 (1.6.4-x86_64-linux)
     steep (1.5.3)
       activesupport (>= 5.1)
       concurrent-ruby (>= 1.1.10)
