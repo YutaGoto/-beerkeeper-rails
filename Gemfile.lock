@@ -214,7 +214,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     securerandom (0.2.2)
-    sqlite3 (1.6.7-x86_64-linux)
+    sqlite3 (1.6.9-x86_64-linux)
     steep (1.5.3)
       activesupport (>= 5.1)
       concurrent-ruby (>= 1.1.10)
