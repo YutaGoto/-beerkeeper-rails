@@ -219,7 +219,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     securerandom (0.3.0)
-    sqlite3 (1.6.7-x86_64-linux)
+    sqlite3 (1.7.0-x86_64-linux)
     steep (1.6.0)
       activesupport (>= 5.1)
       concurrent-ruby (>= 1.1.10)
@@ -266,7 +266,7 @@ DEPENDENCIES
   rbs_rails
   rubocop
   rubocop-rails
-  sqlite3 (~> 1.6)
+  sqlite3 (~> 1.7)
   steep
   tzinfo-data
 
